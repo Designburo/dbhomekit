@@ -1,2 +1,2 @@
 # dbhomekit
-Flamigo switches from homewizard to control with IFTTT
+Flamigo switches from homewizard (sold by ACTION stores) to control with IFTTT (e.g. Google Assistent)
