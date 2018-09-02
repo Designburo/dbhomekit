@@ -1,9 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Charlot
- * Date: 24/08/2018
- * Time: 13:42
+ * Created by  : Designburo.nl
+ * Project     : DBHomekit
+ * Filename    : classes/display.class.php
+ * Description : Handles everything send to browser
+ * Date        : 02/09/2018
+ * Time        : 22:06
+ * Source      : https://github.com/Designburo/dbhomekit
  */
 
 namespace db\home;

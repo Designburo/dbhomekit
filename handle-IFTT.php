@@ -1,9 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Charlot
- * Date: 27/08/2018
- * Time: 14:47
+ * Created by  : Designburo.nl
+ * Project     : DBHomekit
+ * Filename    : handle-IFTT.php
+ * Description : File to handle IFTTT Posts
+ * Date        : 02/09/2018
+ * Time        : 22:06
+ * Source      : https://github.com/Designburo/dbhomekit
  */
 
 namespace db\home;
