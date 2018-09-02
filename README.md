@@ -14,7 +14,7 @@ This is pretty straight forward. After copying to your website navigate to the f
 An installation wizard will guide you through the process with a few questions.
 1. Asking for a username and password to secure the DBHomekit from access by others.
 2. Asking your credentials you used to register the HomeWizard Lite app that controls your switches.
-3. DBHomeKit will then make a connection to HomeWizard t6o retrieve all your switch information.
+3. DBHomeKit will then make a connection to HomeWizard to retrieve all your switch information.
 
 ## Authors
 Designburo.nl
