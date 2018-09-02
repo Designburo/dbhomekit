@@ -20,5 +20,6 @@ An installation wizard will guide you through the process with a few questions.
 Designburo.nl
 
 ## Version
+* 1.2 Installation improvements
 * 1.1 Fixed light on/off buttons in panels
 * 1.0 Initial release
