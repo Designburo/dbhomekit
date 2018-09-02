@@ -19,6 +19,6 @@ An installation wizard will guide you through the process with a few questions.
 ## Authors
 Designburo.nl
 
-##Version
+## Version
 1.1 Fixed light on/off buttons in panels
 1.0 Initial release
