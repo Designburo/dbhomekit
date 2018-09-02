@@ -29,8 +29,10 @@ use db\home as home;
 
 $io = new home\io( $config->getValue('HomeWizard', 'username' ), $config->getValue('HomeWizard', 'password' ) );
 
-if($username !== $config->config['login']['username'] || $password !== $config->config['login']['password'] ) {
-	die('wrong credentials');
+if(!$config->loggedIn ) {
+	if ( $username !== $config->config['login']['username'] || $password !== $config->config['login']['password'] ) {
+		die( 'wrong credentials' );
+	}
 }
 
 // Request per device

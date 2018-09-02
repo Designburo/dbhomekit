@@ -10,7 +10,7 @@
                 <select name="what" class="uk-select">
                     <option value="device">1 particular device</option>
                     <option value="room">All devices of a certain type in a room</option>
-                    <option value="room">All devices of a certain type</option>
+                    <option value="type">All devices of a certain type</option>
                 </select>
                 <input class="uk-button uk-button-primary uk-width-1-1 uk-margin-top" type="submit" value="next">
             </form>
