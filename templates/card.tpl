@@ -24,9 +24,9 @@
             <input type="hidden" name="deviceid" value="%%deviceId%%">
             <input type="hidden" name="action" value="savedevice">
             <div class="uk-card-body">
-                <p><span class="uk-text-bold">Device type</span><BR>%%devicetypeName%%</p>
-                <p><label class="uk-text-bold" for="type">Your type</label>%%deviceType%%</p>
-                <p><label class="uk-text-bold" for="room">Room</label>%%deviceRoom%%</p>
+                <p><span class="uk-text-bold">Device type </span><BR>%%devicetypeName%%</p>
+                <p><label class="uk-text-bold" for="type">Your type </label>%%deviceType%%</p>
+                <p><label class="uk-text-bold" for="room">Room </label>%%deviceRoom%%</p>
             </div>
             <div class="uk-card-footer uk-text-right">
                 <input type="submit" class="uk-button uk-button-default uk-text-bold" value="Save">

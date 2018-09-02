@@ -127,6 +127,18 @@ if ( $action = getPost('action' ) ) {
 			$config->config['HomeWizard']['password'] = $homewizardPassword;
 			$config->saveConfig();
 			break;
+		case "hw_credentials" :
+			$homewizardUsername = getPost('h_username');
+			$homewizardPassword = getPost('h_password');
+			if ($homewizardPassword === false || $homewizardUsername === false ) {
+				$display->setMessage('Not all fields have been filled' );
+				$display->prepare('HW-credentials' );
+				$display->present();
+			}
+			$config->config['HomeWizard']['username'] = $homewizardUsername;
+			$config->config['HomeWizard']['password'] = $homewizardPassword;
+			$config->saveConfig();
+			break;
 		case "login" :
 			$username = getPost('username');
 			$password = getPost('password');
@@ -319,7 +331,7 @@ if(!$config->getSection('devices') || $reload === 'true') {
 		$config->saveConfig();
 	} else {
 		$display->setMessage( $devices['value'] );
-		$display->prepare('index' );
+		$display->prepare('HW-credentials' );
 		$display->present();
 	}
 }
@@ -332,7 +344,7 @@ if(!$config->getSection('controller')) {
 		echo $config->saveConfig();
 	} else {
 		$display->setMessage( $controller['value'] );
-		$display->prepare('index' );
+		$display->prepare('HW-credentials' );
 		$display->present();
 	}
 }

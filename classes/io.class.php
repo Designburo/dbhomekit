@@ -62,10 +62,13 @@ class io {
 		$ch     = $this->setCurlOptions( $this->getLoginUrl() );
 		$output = curl_exec( $ch );
 		curl_close( $ch );
-		if ( ! $output ) {
+		if (!$output) {
 			return $this->createResponse( false, curl_error( $ch ) );
 		}
 		$output = json_decode( $output, true );
+		if ( $output['status'] === "failed" ) {
+			return $this->createResponse( false, "Incorrect HomeWizard credentials. Answer : " . $output['errorMessage'] );
+		}
 		return $this->createResponse( true, $output['session'] );
 	}
 
