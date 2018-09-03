@@ -74,12 +74,30 @@ if ( $action = getPost('action' ) ) {
 					$display->prepare('ifttt-device-index' );
 					$display->present();
 					break;
-				case "type":
-					$display->prepare('ifttt-type-index' );
+				case "room":
+					$typeList="";
+					$roomList="";
+					$ifttt_rooms = $config->getSection('rooms');
+					foreach ($ifttt_rooms as $room=>$value) {
+						$roomList .= '<option value="'.$room.'">'.$room.'</option>';
+					}
+					$display->setKey('list1', $roomList );
+					$ifttt_types = $config->getSection('types');
+					foreach ($ifttt_types as $type=>$value) {
+						$typeList .= '<option value="'.$type.'">'.$type.'</option>';
+					}
+					$display->setKey('list2', $typeList );
+					$display->prepare('ifttt-room-index' );
 					$display->present();
 					break;
-				case "room":
-					$display->prepare('ifttt-room-index' );
+				case "type":
+					$typeList="";
+					$ifttt_types = $config->getSection('types');
+					foreach ($ifttt_types as $type=>$value) {
+						$typeList .= '<option value="'.$type.'">'.$type.'</option>';
+					}
+					$display->setKey('list', $typeList );
+					$display->prepare('ifttt-type-index' );
 					$display->present();
 					break;
 			}
@@ -104,12 +122,35 @@ if ( $action = getPost('action' ) ) {
 					$display->prepare('ifttt-device-result' );
 					$display->present();
 					break;
-				case "type":
-					$display->prepare('ifttt-type-index' );
+				case "room":
+					$room = getPost('ifttt-chosen-room');
+					$type = getPost('ifttt-chosen-type');
+					if(!$room || !$type) break;
+					$iftttList="";
+					$iftttList.="<h3>WEB Request</h3>";
+					$iftttList.="<p>After you have choosen and setup the IF from IFTHEN in a new applet, now choose THEN and a <strong>WEB</strong> request</p>";
+					$iftttList.="<p>Fill in the following fields: <span class=\"uk-text-meta\">( Example below turns on all $type in $room. Use action=Off to turn it off )</span></p>";
+					$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> ".(!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'."index.php</p>";
+					$iftttList.="<p><span class=\"uk-label uk-label-success\">METHOD</span> POST</p>";
+					$iftttList.="<p><span class=\"uk-label uk-label-success\">CONTENT TYPE</span> application/x-www-form-urlencoded</p>";
+					$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".$config->config['login']['password']."&action=On&room=".$room."&type=".$type."&ifttt=1</p>";
+					$display->setKey('result', $iftttList );
+					$display->prepare('ifttt-room-result' );
 					$display->present();
 					break;
-				case "room":
-					$display->prepare('ifttt-room-index' );
+				case "type":
+					$type = getPost('ifttt-chosen-type');
+					if(!$type) break;
+					$iftttList="";
+					$iftttList.="<h3>WEB Request</h3>";
+					$iftttList.="<p>After you have choosen and setup the IF from IFTHEN in a new applet, now choose THEN and a <strong>WEB</strong> request</p>";
+					$iftttList.="<p>Fill in the following fields: <span class=\"uk-text-meta\">( Example below turns on all $type. Use action=Off to turn it off )</span></p>";
+					$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> ".(!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'."index.php</p>";
+					$iftttList.="<p><span class=\"uk-label uk-label-success\">METHOD</span> POST</p>";
+					$iftttList.="<p><span class=\"uk-label uk-label-success\">CONTENT TYPE</span> application/x-www-form-urlencoded</p>";
+					$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".$config->config['login']['password']."&action=On&room=All&type=".$type."&ifttt=1</p>";
+					$display->setKey('result', $iftttList );
+					$display->prepare('ifttt-type-result' );
 					$display->present();
 					break;
 			}
