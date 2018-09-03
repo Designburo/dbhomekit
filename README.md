@@ -20,6 +20,8 @@ An installation wizard will guide you through the process with a few questions.
 The main page is the dashboard with an overview of all your switches, including the SmartSwitch itself, as separate cards.
 The SmartSwitch has a card with a blue background.
 
+''This will only show up if you have used the HomeWizard Lite app to link and setup your switches.''
+
 Every switch can be assigned a room and a type. You can create new rooms and types from the menu above.
 As soon as you have created a type or room you can actually assign them to a switch (don't forget to press the save button after changes).
 
@@ -33,6 +35,9 @@ For THIS you can choose Google Assistant. For THAT choose the WEB service.
 From the menu IFTTT in DBHomekit you can find what you need to fill in at the WEB service of IFTTT.
 
 Have fun!
+
+#### Refetch Database
+Of you have made any changes in the HomeWizard Lite app (renaming switches or added/deleted switches), just click on the link in the menu "Refetch Database" and DBHomekit will update you devices.
 
 ## Authors
 Designburo.nl
