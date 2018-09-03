@@ -43,6 +43,7 @@ Of you have made any changes in the HomeWizard Lite app (renaming switches or ad
 Designburo.nl
 
 ## Version
+* 1.4 Finished IFTTT Wizards
 * 1.3 Corrected file headers
 * 1.2 Installation improvements
 * 1.1 Fixed light on/off buttons in panels
