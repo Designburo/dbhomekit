@@ -37,7 +37,7 @@ From the menu IFTTT in DBHomekit you can find what you need to fill in at the WE
 Have fun!
 
 #### Refetch Database
-Of you have made any changes in the HomeWizard Lite app (renaming switches or added/deleted switches), just click on the link in the menu "Refetch Database" and DBHomekit will update you devices.
+If you have made any changes in the HomeWizard Lite app (renaming switches or added/deleted switches), just click on the link in the menu "Refetch Database" and DBHomekit will update you devices.
 
 ## Authors
 Designburo.nl
