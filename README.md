@@ -43,6 +43,7 @@ If you have made any changes in the HomeWizard Lite app (renaming switches or ad
 Designburo.nl
 
 ## Version
+* 1.6 Added toggle to device cards to keep things compact
 * 1.5 Bit of code cleanup
 * 1.4 Finished IFTTT Wizards
 * 1.3 Corrected file headers

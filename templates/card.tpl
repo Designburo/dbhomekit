@@ -19,18 +19,21 @@
                     <p class="uk-text-meta uk-margin-remove-top"><span class="uk-text-bold">Id</span>: %%deviceId%%</p>
                 </div>
             </div>
+            <button class="uk-button uk-button-text uk-width-1-1" type="button" uk-toggle="target: #%%divid%%; cls: hide" uk-tooltip="Toggle for more options"><span uk-icon="icon: chevron-down"></span></button>
         </div>
-        <form class="uk-form-horizontal" method="post">
-            <input type="hidden" name="deviceid" value="%%deviceId%%">
-            <input type="hidden" name="action" value="savedevice">
-            <div class="uk-card-body">
-                <p><span class="uk-text-bold">Device type </span><BR>%%devicetypeName%%</p>
-                <p><label class="uk-text-bold" for="type">Your type </label>%%deviceType%%</p>
-                <p><label class="uk-text-bold" for="room">Room </label>%%deviceRoom%%</p>
-            </div>
-            <div class="uk-card-footer uk-text-right">
-                <input type="submit" class="uk-button uk-button-default uk-text-bold" value="Save">
-            </div>
-        </form>
+        <div id="%%divid%%" class="uk-card-body hide">
+            <form class="uk-form-horizontal" method="post">
+                <input type="hidden" name="deviceid" value="%%deviceId%%">
+                <input type="hidden" name="action" value="savedevice">
+                <div class="uk-card-body">
+                    <p><span class="uk-text-bold">Device type </span><BR>%%devicetypeName%%</p>
+                    <p><label class="uk-text-bold" for="type">Your type </label>%%deviceType%%</p>
+                    <p><label class="uk-text-bold" for="room">Room </label>%%deviceRoom%%</p>
+                </div>
+                <div class="uk-card-footer uk-text-right">
+                    <input type="submit" class="uk-button uk-button-default uk-text-bold" value="Save">
+                </div>
+            </form>
+        </div>
     </div>
 </div>

@@ -113,6 +113,7 @@ switch($page) {
 			$deviceId = $device['id'];
 			$devicetypeName = $device['typeName'];
 			$devicename = $device['name'];
+			$divid = str_replace(' ','_',$devicename);
 			$controllerName = $config->getValue('controller', 'name');
 			if($devicetypeName=='plug_outlet') {
 				$background = 'uk-background-primary';
@@ -166,6 +167,7 @@ switch($page) {
 			$replace = array(
 				'background',
 				'deviceId',
+				'divid',
 				'devicetypeName',
 				'devicename',
 				'cardtype',
@@ -175,6 +177,7 @@ switch($page) {
 			$with = array(
 				$background,
 				$deviceId,
+				$divid,
 				$devicetypeName,
 				$devicename,
 				$cardtype,
