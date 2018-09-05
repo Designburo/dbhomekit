@@ -10,13 +10,33 @@
  */
 
 namespace db\home;
-
+print_r($_GET);
 $username = getPost('username');
+if($username === false) {
+	$username = getGet('username');
+}
 $password = getPost('password');
-$action = trim(getPost('action'));
+if($password === false) {
+	$password = getGet('password');
+}
+
+$action = getPost('action');
+if($action === false) {
+	$action = trim( getGet( 'action' ) );
+}
 $room = getPost('room');
+if($room === false) {
+	$room = getGet('room');
+}
 $type = getPost('type');
+if($type === false) {
+	$type = getGet('type');
+}
 $device = getPost('device');
+if($device === false) {
+	$device = getGet('device');
+}
+var_dump($action);
 $controller = $config->getController();
 $dt = date('d-m-Y-H-i-s');
 $log = "$dt : Username :$username - Password:$password - Action:$action - Room:$room - Type:$type - Device:$device - Controller$controller";

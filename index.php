@@ -53,8 +53,9 @@ if(isset($_GET['display'])) {
 } else $page = 'DASHBOARD';
 
 
-if ($ifttt = getPost('ifttt')) {
+if ($ifttt = getPost('ifttt') || $ifttt = getGet('ifttt')) {
 	include "handle-IFTT.php";
+	die();
 }
 
 if ( $action = getPost('action' ) ) {
