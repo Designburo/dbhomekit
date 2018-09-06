@@ -55,7 +55,9 @@ if(isset($_GET['display'])) {
 
 if ($ifttt = getPost('ifttt') || $ifttt = getGet('ifttt')) {
 	include "handle-IFTT.php";
-	die();
+	if(!$config->loggedIn) {
+		die();
+	}
 }
 
 if ( $action = getPost('action' ) ) {
@@ -90,7 +92,6 @@ if(!$config->getSection('devices') || $reload === 'true') {
 if(!$config->getSection('controller')) {
 	echo "no controller";
 	$controller = $io->getAllDevices(true);
-	print_r($controller);
 	if ($controller['status'] === true) {
 		$config->config['controller'] = $controller['value'];
 		echo $config->saveConfig();

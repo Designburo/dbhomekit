@@ -69,6 +69,7 @@ class io {
 			return $this->createResponse( false, curl_error( $ch ) );
 		}
 		$output = json_decode( $output, true );
+
 		if ( $output['status'] === "failed" ) {
 			return $this->createResponse( false, "Incorrect HomeWizard credentials. Answer : " . $output['errorMessage'] );
 		}
@@ -108,21 +109,6 @@ class io {
 		}
 		$all = $all[0]['devices'];
 		return $this->createResponse( true, $all );
-		/*
-		$c = array();
-
-		$c['numberOfDevices'] = count($all);
-		$i=1;
-		foreach ($all as $single) {
-			$c[$i.'_id'] = $single['id'];
-			$c[$i.'_typeName'] = $single['typeName'];
-			$c[$i.'_name'] = $single['name'];
-			$c[$i.'_code'] = $single['code'];
-			$c[$i.'_iconUrl'] = $single['iconUrl'];
-			$i++;
-		}
-		return $this->createResponse( true, $c );
-		*/
 	}
 
 	public function getPlugInfo( $token, $smartswitch, $apparaat, $list = false ) {
@@ -158,8 +144,8 @@ class io {
 	public function doAction( $url, $token, $action  ) {
 		$headers = $this->setHeaders($token);
 		$data        = array( "action" => $action );
+		//$data        = array( "name" => "test" );
 		$data_string = json_encode( $data );
-		//echo $data_string;
 		$ch         = curl_init();
 		curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
 		curl_setopt( $ch, CURLOPT_URL, $url );
@@ -171,7 +157,6 @@ class io {
 		curl_setopt( $ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC );
 		$output = curl_exec( $ch );
 		$cinfo   = curl_getinfo( $ch );
-
 		if ( ! $output ) {
 			$this->createResponse( false, curl_error( $ch ) );
 		}

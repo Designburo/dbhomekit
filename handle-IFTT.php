@@ -10,7 +10,7 @@
  */
 
 namespace db\home;
-print_r($_GET);
+
 $username = getPost('username');
 if($username === false) {
 	$username = getGet('username');
@@ -36,7 +36,7 @@ $device = getPost('device');
 if($device === false) {
 	$device = getGet('device');
 }
-var_dump($action);
+//var_dump($action);
 $controller = $config->getController();
 $dt = date('d-m-Y-H-i-s');
 $log = "$dt : Username :$username - Password:$password - Action:$action - Room:$room - Type:$type - Device:$device - Controller$controller";
