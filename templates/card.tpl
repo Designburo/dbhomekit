@@ -15,6 +15,7 @@
                         <input type="hidden" name="device" value="%%devicename%%">
                         <button class="uk-text-middle uk-margin-right uk-button uk-button-text" uk-tooltip="Turn off" type="submit" name="nothing" value=""><span uk-icon="icon: ban"></span></button>
                     </form>
+                    <div class="uk-position-top-right"><img src="%%icon%%" style="width:50px;margin:10px;"></div>
                     <h3 class="uk-card-title uk-margin-remove-bottom">%%devicename%%</h3>
                     <p class="uk-text-meta uk-margin-remove-top"><span class="uk-text-bold">Id</span>: %%deviceId%%</p>
                 </div>

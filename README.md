@@ -43,6 +43,7 @@ If you have made any changes in the HomeWizard Lite app (renaming switches or ad
 Designburo.nl
 
 ## Version
+* 1.9 Added icons
 * 1.8 Getting rid of some debug messages
 * 1.7 Added Url support (GET) instead of only POST
 * 1.6 Added toggle to device cards to keep things compact

@@ -115,6 +115,14 @@ switch($page) {
 			$deviceId = $device['id'];
 			$devicetypeName = $device['typeName'];
 			$devicename = $device['name'];
+			$deviceIcon = $device['iconUrl'];
+			if($deviceIcon==="") {
+				$deviceIcon="icons/default";
+			}
+			if($deviceIcon==="custom") {
+				$deviceIcon="icons/custom";
+			}
+			$deviceIcon .= '.png';
 			$divid = str_replace(' ','_',$devicename);
 			$controllerName = $config->getValue('controller', 'name');
 			if($devicetypeName=='plug_outlet') {
@@ -167,6 +175,7 @@ switch($page) {
 			}
 
 			$replace = array(
+				'icon',
 				'background',
 				'deviceId',
 				'divid',
@@ -177,6 +186,7 @@ switch($page) {
 				'deviceType'
 			);
 			$with = array(
+				$deviceIcon,
 				$background,
 				$deviceId,
 				$divid,
