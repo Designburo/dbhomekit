@@ -18,6 +18,9 @@
                     <div class="uk-position-top-right"><img src="%%icon%%" style="width:50px;margin:10px;opacity: 0.5"></div>
                     <h3 class="uk-card-title uk-margin-remove-bottom">%%devicename%%</h3>
                     <!--<p class="uk-text-meta uk-margin-remove-top"><span class="uk-text-bold">Id</span>: %%deviceId%%</p>-->
+                    <p class="uk-text-meta uk-text-small uk-margin-remove-top">
+                        <span class="uk-text-bold">Type:</span> %%devicet%%<BR><span class="uk-text-bold">Room(s):</span> %%roomlist%%
+                    </p>
                 </div>
             </div>
             <button class="uk-button uk-button-text uk-width-1-1" type="button" uk-toggle="target: #%%divid%%; cls: hide" uk-tooltip="Toggle for more options"><span uk-icon="icon: chevron-down"></span></button>

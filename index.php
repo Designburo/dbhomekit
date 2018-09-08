@@ -138,21 +138,25 @@ switch($page) {
 				$deviceHTML = 'undefined';
 			} else {
 				$deviceRoom = false;
+				$roomList = array();
 				$deviceHTML = '<select name="room[]" class="uk-select" multiple>';
 				foreach ($rooms as $room=>$id) {
 					if(in_array($deviceId,$id)) {
 						$deviceHTML .= '<option value="' . $room . '" selected>' . $room . '</option>';
 						$deviceRoom = $room;
+						$roomList[]=$room;
 					} else {
 						$deviceHTML .= '<option value="' . $room . '">' . $room . '</option>';
 					}
 				}
 				if ($deviceRoom === false) {
+					$roomList[]='undefined';
 					$deviceHTML .= '<option value="undefined" selected disabled>undefined</option>';
 				}
 				$deviceHTML .= '</select>';
 
 			}
+			$roomList = implode(', ',$roomList);
 			$types = $config->getSection('types');
 			if(!$types) {
 				$typeHTML = 'undefined';
@@ -168,6 +172,7 @@ switch($page) {
 					}
 				}
 				if ($deviceType === false) {
+					$deviceType = 'undefined';
 					$typeHTML .= '<option value="undefined" selected disabled>undefined</option>';
 				}
 				$typeHTML .= '</select>';
@@ -175,6 +180,8 @@ switch($page) {
 			}
 
 			$replace = array(
+				'roomlist',
+				'devicet',
 				'icon',
 				'background',
 				'deviceId',
@@ -186,6 +193,8 @@ switch($page) {
 				'deviceType'
 			);
 			$with = array(
+				$roomList,
+				$deviceType,
 				$deviceIcon,
 				$background,
 				$deviceId,
