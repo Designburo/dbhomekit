@@ -41,10 +41,10 @@ $controller = $config->getController();
 $dt = date('d-m-Y-H-i-s');
 $log = "$dt : Username :$username - Password:$password - Action:$action - Room:$room - Type:$type - Device:$device - Controller$controller";
 
-if($action === "on") {
+if($action === "on" || $action === "aan") {
 	$action = "On";
 }
-if($action === "off") {
+if($action === "off" || $action === "uit") {
 	$action = "Off";
 }
 

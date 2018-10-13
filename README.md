@@ -43,6 +43,7 @@ If you have made any changes in the HomeWizard Lite app (renaming switches or ad
 Designburo.nl
 
 ## Version
+* 1.93 Added support for dutch on / off as an action
 * 1.92 Small style enhancements
 * 1.91 Small enhancements
 * 1.9  Added icons
