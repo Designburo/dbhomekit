@@ -69,7 +69,7 @@ switch ($action) {
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> ".(!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'."index.php</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">METHOD</span> POST</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">CONTENT TYPE</span> application/x-www-form-urlencoded</p>";
-				$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".$config->config['login']['password']."&action=On&device=".$device."&ifttt=1</p>";
+				$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".sha1($config->config['login']['password'])."&action=On&device=".$device."&ifttt=1</p>";
 				$display->setKey('result', $iftttList );
 				$display->prepare('ifttt-device-result' );
 				$display->present();
@@ -85,7 +85,7 @@ switch ($action) {
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> ".(!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'."index.php</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">METHOD</span> POST</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">CONTENT TYPE</span> application/x-www-form-urlencoded</p>";
-				$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".$config->config['login']['password']."&action=On&room=".$room."&type=".$type."&ifttt=1</p>";
+				$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".sha1($config->config['login']['password'])."&action=On&room=".$room."&type=".$type."&ifttt=1</p>";
 				$display->setKey('result', $iftttList );
 				$display->prepare('ifttt-room-result' );
 				$display->present();
@@ -100,7 +100,7 @@ switch ($action) {
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> ".(!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'."index.php</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">METHOD</span> POST</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">CONTENT TYPE</span> application/x-www-form-urlencoded</p>";
-				$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".$config->config['login']['password']."&action=On&room=All&type=".$type."&ifttt=1</p>";
+				$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".sha1($config->config['login']['password'])."&action=On&room=All&type=".$type."&ifttt=1</p>";
 				$display->setKey('result', $iftttList );
 				$display->prepare('ifttt-type-result' );
 				$display->present();
