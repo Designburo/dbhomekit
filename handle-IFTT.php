@@ -53,7 +53,9 @@ use db\home as home;
 $io = new home\io( $config->getValue('HomeWizard', 'username' ), $config->getValue('HomeWizard', 'password' ) );
 
 if(!$config->loggedIn ) {
-	if ( $username !== $config->config['login']['username'] || ( $password !== $config->config['login']['password'] || $password !== sha1( $config->config['login']['password'] ) ) ) {
+	if ( $username !== $config->config['login']['username'] || ( $password !== $config->config['login']['password'] && $password !== sha1( $config->config['login']['password'] ) ) ){
+		$log .= " - ERROR: Wrong credentials";
+		logToFile($log);
 		die( 'wrong credentials' );
 	}
 }
