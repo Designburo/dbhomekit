@@ -57,6 +57,7 @@ switch ($action) {
 	case "iftttwizard2" :
 		$display->setKey('nav', $display->nav($page) );
 		$wizardType = getPost('ifttt-type');
+		$scriptAddress = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
 		if($wizardType === false) break;
 		switch ($wizardType) {
 			case "1":
@@ -66,7 +67,7 @@ switch ($action) {
 				$iftttList.="<h3>WEB Request</h3>";
 				$iftttList.="<p>After you have choosen and setup the IF from IFTHEN in a new applet, now choose THEN and a <strong>WEB</strong> request</p>";
 				$iftttList.="<p>Fill in the following fields: <span class=\"uk-text-meta\">( Example below turns on the device. Use action=Off to turn it off )</span></p>";
-				$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> ".(!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'."index.php</p>";
+				$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> " . $scriptAddress . "</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">METHOD</span> POST</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">CONTENT TYPE</span> application/x-www-form-urlencoded</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".sha1($config->config['login']['password'])."&action=On&device=".$device."&ifttt=1</p>";
@@ -82,7 +83,7 @@ switch ($action) {
 				$iftttList.="<h3>WEB Request</h3>";
 				$iftttList.="<p>After you have choosen and setup the IF from IFTHEN in a new applet, now choose THEN and a <strong>WEB</strong> request</p>";
 				$iftttList.="<p>Fill in the following fields: <span class=\"uk-text-meta\">( Example below turns on all $type in $room. Use action=Off to turn it off )</span></p>";
-				$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> ".(!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'."index.php</p>";
+				$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> " . $scriptAddress . "</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">METHOD</span> POST</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">CONTENT TYPE</span> application/x-www-form-urlencoded</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".sha1($config->config['login']['password'])."&action=On&room=".$room."&type=".$type."&ifttt=1</p>";
@@ -97,7 +98,7 @@ switch ($action) {
 				$iftttList.="<h3>WEB Request</h3>";
 				$iftttList.="<p>After you have choosen and setup the IF from IFTHEN in a new applet, now choose THEN and a <strong>WEB</strong> request</p>";
 				$iftttList.="<p>Fill in the following fields: <span class=\"uk-text-meta\">( Example below turns on all $type. Use action=Off to turn it off )</span></p>";
-				$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> ".(!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/'."index.php</p>";
+				$iftttList.="<p><span class=\"uk-label uk-label-success\">URL</span> " . $scriptAddress . "</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">METHOD</span> POST</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">CONTENT TYPE</span> application/x-www-form-urlencoded</p>";
 				$iftttList.="<p><span class=\"uk-label uk-label-success\">BODY</span> username=".$config->config['login']['username']."&password=".sha1($config->config['login']['password'])."&action=On&room=All&type=".$type."&ifttt=1</p>";

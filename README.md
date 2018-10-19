@@ -43,6 +43,7 @@ If you have made any changes in the HomeWizard Lite app (renaming switches or ad
 Designburo.nl
 
 ## Version
+* 1.96 Bugfix in the IFTTT wizard (Thx to John Leenen for noticing)
 * 1.95 Added support for sha1 passwords for IFTTT
 * 1.93 Added support for dutch on / off as an action
 * 1.92 Small style enhancements
